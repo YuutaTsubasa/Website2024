@@ -5,17 +5,20 @@
     import type { Item } from "../lib/item";
     import { Tag } from "../lib/tag";
 	import Footer from "../components/footer.svelte";
+	import type { Metadata } from "$lib/metadata";
+	import { Utils } from "$lib/utils";
 
-    const paths = import.meta.glob("/src/posts/*.md", {eager: true});
-    const files : MarkdownFile[] = Object.values(paths) as MarkdownFile[];
+    const paths : Record<string, MarkdownFile> = import.meta.glob("/src/posts/*.md", {eager: true});
+    const files : [string, MarkdownFile][] = Object.entries(paths) as [string, MarkdownFile][];
     const items : Item[] = files
         .map(file => { 
             return {
-                thumbnailUrl: file.metadata.thumbnail,
-                title: file.metadata.title,
-                createdTime: file.metadata.published,
-                author: file.metadata.author,
-                tags: file.metadata.tags
+                id: Utils.convertPathToId(file[0]),
+                thumbnailUrl: file[1].metadata.thumbnail,
+                title: file[1].metadata.title,
+                createdTime: file[1].metadata.published,
+                author: file[1].metadata.author,
+                tags: file[1].metadata.tags
             };
         });
     $: newsItems = items.sort((a, b) => new Date(b.createdTime).getTime() - new Date(a.createdTime).getTime()).slice(0, 3);

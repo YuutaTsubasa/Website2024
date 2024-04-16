@@ -12,8 +12,6 @@ thumbnail: /images/posts/renpy_tutorial.webp
 
 - [【#程式/#伐木高中上課囉】Vol. 388: 伐木高中上課囉！程式設計科課程：Ren'Py 入門～一起來做視覺小說～](https://www.youtube.com/live/TRsDuFXSMnQ?feature=share)
 
-```raw
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TRsDuFXSMnQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
 
 全部伐木高中課程影片播放清單：[https://www.youtube.com/live/HEtjArRaiM0?feature=share](https://www.youtube.com/live/HEtjArRaiM0?feature=share)

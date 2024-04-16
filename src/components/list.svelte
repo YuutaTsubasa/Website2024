@@ -5,7 +5,6 @@
     export let items : Item[];
 </script>
 
-
 <ul>
     {#each items as item}
         <li><ListItem {item}/></li>
